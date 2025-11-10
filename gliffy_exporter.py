@@ -5,7 +5,6 @@ def export_to_gliffy_json(elements: dict, out_path: str):
     edges = elements.get('edges', [])
     w,h = elements.get('image_size', (1024,768))
 
-
     doc = {
         'version': '1.0',
         'page': {
@@ -15,7 +14,6 @@ def export_to_gliffy_json(elements: dict, out_path: str):
             'connectors': []
         }
     }
-
 
     for n in nodes:
         x,y,w0,h0 = n['bbox']
@@ -29,7 +27,6 @@ def export_to_gliffy_json(elements: dict, out_path: str):
             'text': n.get('label','')
         }
         doc['page']['shapes'].append(shape)
-
 
     for e in edges:
         src = e.get('source')

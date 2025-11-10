@@ -73,7 +73,6 @@ def image_to_elements(img_path):
         x,y,w,h = b
         return (x + w//2, y + h//2)
 
-
     node_centers = {n['id']: center(n['bbox']) for n in nodes}
     for e in edges:
         if 'points' not in e or len(e['points'])==0:
