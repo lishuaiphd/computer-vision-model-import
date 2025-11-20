@@ -10,6 +10,6 @@ def process_image_to_gliffy(image_path: str) -> str:
         return None
     filename = os.path.basename(image_path)
     name, _ = os.path.splitext(filename)
-    out_path = os.path.join(OUTPUT_DIR, name + '_gliffy.json')
+    out_path = os.path.join(OUTPUT_DIR, name + '_converted.json')
     export_to_gliffy_json(elements, out_path)
     return out_path
